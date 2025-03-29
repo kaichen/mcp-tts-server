@@ -19,18 +19,26 @@ To install dependencies:
 bun install
 ```
 
-## Running the Server
+## Running the Server on MCP Client
 
 To run the server using the stdio transport:
 
-```bash
-# Make sure GROQ_API_KEY is set in your environment
-export GROQ_API_KEY="YOUR_GROQ_API_KEY" 
-
-bun run src/cli.ts 
+```json
+{
+  "mcpServers": {
+    "mcp-tts-server": {
+      "command": "bunx",
+      "args": [
+        "--bun",
+        "mcp-tts-server",
+      ],
+      "env": {
+        "GROQ_API_KEY": "gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      }
+    }
+  }
+}
 ```
-
-The server will then listen for MCP requests on standard input/output.
 
 ## Project Structure
 

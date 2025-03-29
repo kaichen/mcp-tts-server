@@ -4,7 +4,7 @@ const { server } = require("./server.js");
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("TTS MCP Server running on stdio");
+  console.log("TTS MCP Server running on stdio");
 }
 
 main().catch((error) => {
