@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+here's nodejs cli program, using bun as package management.
+write code in commonjs.
