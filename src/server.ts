@@ -13,12 +13,12 @@ const generateSpeechArgsSchema = {
 // Create server instance
 const server = new McpServer({
   name: "mcp-tts-server",
-  version: "0.1.2"
+  version: "0.1.3"
 });
 
 server.tool(
-  "generate_speech", 
-  "generate lifelike audio from text", 
+  "speech_text", 
+  "generate lifelike audio from text(only english is supported)", 
   generateSpeechArgsSchema, 
   async (args: any) => {
     const apiKey = Bun.env.GROQ_API_KEY;
@@ -60,8 +60,14 @@ server.tool(
         // throw new Error("Failed to play audio."); 
       }
 
-      return audioData;
-
+      return {
+        content: [
+          {
+            type: 'text',
+            text: 'Audio generated and played successfully'
+          }
+        ]
+      };
     } catch (error) {
       console.log(JSON.stringify({ level: 'error', message: 'Error calling Groq API', error: error }));
       if (error instanceof Error) {
