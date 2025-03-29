@@ -1,6 +1,6 @@
 const { McpServer } = require("@modelcontextprotocol/sdk/server/mcp.js");
-const { z } = require("zod");
 const symphonia = require('@tropicbliss/symphonia');
+const { z } = require("zod");
 
 const apiUrl = "https://api.groq.com/openai/v1/audio/speech";
 
@@ -12,12 +12,8 @@ const generateSpeechArgsSchema = {
 
 // Create server instance
 const server = new McpServer({
-  name: "groq-tts",
-  version: "1.0.0",
-  capabilities: {
-    resources: {},
-    tools: {},
-  },
+  name: "mcp-tts-server",
+  version: "0.1.2"
 });
 
 server.tool(

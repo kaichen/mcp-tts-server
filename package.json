@@ -1,20 +1,21 @@
 {
   "name": "mcp-tts-server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A TTS MCP server",
   "main": "dist/cli.js",
   "bin": {
     "mcp-tts-server": "./dist/cli.js"
   },
   "scripts": {
-    "build": "bunx tsc",
+    "build": "bun build --target=bun --outdir=dist ./src/cli.ts",
     "start": "bun run build && node dist/cli.js",
     "dev": "bun run src/cli.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "tts",
-    "cli"
+    "mcp",
+    "modelcontextprotocol",
+    "tts"
   ],
   "author": "Kai Chen<kai@thekaiway.com>",
   "license": "MIT",
@@ -23,6 +24,11 @@
     "README.md",
     "LICENSE"
   ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "@tropicbliss/symphonia": "^0.2.19",
+    "zod": "^3.24.2"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^22.13.14",
@@ -30,10 +36,5 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.8.0",
-    "@tropicbliss/symphonia": "^0.2.19",
-    "zod": "^3.24.2"
   }
 }
