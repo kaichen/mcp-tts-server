@@ -21,7 +21,7 @@ server.tool(
   "generate lifelike audio from text(only english is supported)", 
   generateSpeechArgsSchema, 
   async (args: any) => {
-    const apiKey = Bun.env.GROQ_API_KEY;
+    const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) {
       throw new Error("Missing GROQ_API_KEY environment variable.");
     }
