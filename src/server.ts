@@ -13,7 +13,7 @@ const generateSpeechArgsSchema = {
 // Create server instance
 const server = new McpServer({
   name: "mcp-tts-server",
-  version: "0.1.6"
+  version: "0.1.9"
 });
 
 server.tool(

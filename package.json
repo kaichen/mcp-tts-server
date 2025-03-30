@@ -1,6 +1,6 @@
 {
   "name": "mcp-tts-server",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "description": "A TTS MCP server",
   "main": "dist/cli.js",
   "bin": {
