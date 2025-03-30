@@ -4,7 +4,7 @@
   "description": "A TTS MCP server",
   "main": "dist/cli.js",
   "bin": {
-    "mcp-tts-server": "./dist/cli.js"
+    "mcp-tts-server": "dist/cli.js"
   },
   "scripts": {
     "build": "bun run tsc",
